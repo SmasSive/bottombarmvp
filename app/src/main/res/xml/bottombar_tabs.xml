@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+  <tab
+      id="@+id/tab_search"
+      icon="@drawable/icon_search_active_m"
+      title="Search" />
+  <tab
+      id="@+id/tab_favorites"
+      icon="@drawable/icon_heart_text_m"
+      title="Favorites" />
+  <tab
+      id="@+id/tab_alerts"
+      icon="@drawable/icon_alerts_text_m"
+      title="Alerts" />
+  <tab
+      id="@+id/tab_messages"
+      icon="@drawable/icon_speech_text_m"
+      title="Messages" />
+  <tab
+      id="@+id/tab_more"
+      icon="@drawable/icon_more_text_m"
+      title="More" />
+</tabs>
