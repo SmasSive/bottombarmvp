@@ -39,6 +39,7 @@
         android:name=".MoreActivity"
         android:theme="@style/noAnimTheme"
         />
+    <activity android:name=".HomeActivity"/>
   </application>
 
 </manifest>
