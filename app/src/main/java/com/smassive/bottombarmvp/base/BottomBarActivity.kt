@@ -1,8 +1,9 @@
-package com.smassive.bottombarmvp
+package com.smassive.bottombarmvp.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.roughike.bottombar.BottomBar
+import com.smassive.bottombarmvp.R
 
 abstract class BottomBarActivity : AppCompatActivity() {
 

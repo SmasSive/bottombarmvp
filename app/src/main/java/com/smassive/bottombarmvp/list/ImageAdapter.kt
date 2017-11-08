@@ -1,9 +1,11 @@
-package com.smassive.bottombarmvp
+package com.smassive.bottombarmvp.list
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import com.smassive.bottombarmvp.R
+import com.smassive.bottombarmvp.extensions.inflate
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_list_main.view.photo
 

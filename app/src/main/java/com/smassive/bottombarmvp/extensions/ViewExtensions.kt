@@ -1,4 +1,4 @@
-package com.smassive.bottombarmvp
+package com.smassive.bottombarmvp.extensions
 
 import android.support.annotation.LayoutRes
 import android.view.LayoutInflater

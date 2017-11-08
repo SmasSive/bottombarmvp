@@ -1,4 +1,4 @@
-package com.smassive.bottombarmvp
+package com.smassive.bottombarmvp.list
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,9 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AlphaAnimation
 import android.view.animation.AnimationSet
 import android.view.animation.TranslateAnimation
+import com.smassive.bottombarmvp.base.BottomBarActivity
+import com.smassive.bottombarmvp.HomeActivity
+import com.smassive.bottombarmvp.R
 import kotlinx.android.synthetic.main.activity_main.recyclerView
 
 class MainActivity : BottomBarActivity() {

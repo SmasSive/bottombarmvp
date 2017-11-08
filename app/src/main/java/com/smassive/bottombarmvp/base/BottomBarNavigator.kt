@@ -1,7 +1,13 @@
-package com.smassive.bottombarmvp
+package com.smassive.bottombarmvp.base
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
+import com.smassive.bottombarmvp.AlertsActivity
+import com.smassive.bottombarmvp.FavoritesActivity
+import com.smassive.bottombarmvp.MessagesActivity
+import com.smassive.bottombarmvp.MoreActivity
+import com.smassive.bottombarmvp.R
+import com.smassive.bottombarmvp.list.MainActivity
 
 class BottomBarNavigator {
 
