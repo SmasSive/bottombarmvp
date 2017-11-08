@@ -3,24 +3,21 @@ package com.smassive.bottombarmvp
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.bottomBar
 import kotlinx.android.synthetic.main.activity_main.recyclerView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BottomBarActivity() {
+
+  override val layoutId: Int
+    get() = R.layout.activity_main
+  override val tabId: Int
+    get() = R.id.tab_search
 
   companion object {
     fun getIntent(context: Context) = Intent(context, MainActivity::class.java)
   }
 
-  private val bottomBarNavigator = BottomBarNavigator()
-
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
-
-    bottomBar.setDefaultTab(R.id.tab_search)
-    bottomBar.setOnTabSelectListener({ tabId -> bottomBarNavigator.openActivity(this, tabId) }, false)
 
     val imageUrls = listOf(
         "https://d.inmofactory.com/1/101830/12283936/133081769.jpg",
