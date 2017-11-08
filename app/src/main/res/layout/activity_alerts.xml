@@ -25,6 +25,7 @@
       android:layout_height="60dp"
       app:bb_tabXmlResource="@xml/bottombar_tabs"
       app:bb_badgesHideWhenActive="false"
+      app:bb_badgeBackgroundColor="@color/red"
       app:layout_constraintBottom_toBottomOf="parent"
       />
 
