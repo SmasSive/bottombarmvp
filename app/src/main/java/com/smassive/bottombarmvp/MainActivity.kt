@@ -3,6 +3,11 @@ package com.smassive.bottombarmvp
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.AlphaAnimation
+import android.view.animation.AnimationSet
+import android.view.animation.TranslateAnimation
 import kotlinx.android.synthetic.main.activity_main.recyclerView
 
 class MainActivity : BottomBarActivity() {
@@ -13,6 +18,9 @@ class MainActivity : BottomBarActivity() {
     get() = R.id.tab_search
 
   companion object {
+    private const val ALPHA_DURATION = 450L
+    private const val TRANSLATE_DURATION = 200L
+
     fun getIntent(context: Context) = Intent(context, MainActivity::class.java)
   }
 
@@ -32,5 +40,32 @@ class MainActivity : BottomBarActivity() {
         "https://d.inmofactory.com/1/90885/13061649/148182864.jpg"
     )
     recyclerView.adapter = ImageAdapter(this, imageUrls)
+
+    enterAnimation(recyclerView)
+  }
+
+  private fun enterAnimation(view: View) {
+    val animationSet = AnimationSet(true)
+    animationSet.addAnimation(fadeInAnimation())
+    animationSet.addAnimation(translateAnimation())
+    view.startAnimation(animationSet)
+  }
+
+  private fun translateAnimation(): TranslateAnimation {
+    val translateAnimation = TranslateAnimation(
+        TranslateAnimation.ABSOLUTE, 0f,
+        TranslateAnimation.ABSOLUTE, 0f,
+        TranslateAnimation.ABSOLUTE, 40f,
+        TranslateAnimation.ABSOLUTE, 0f)
+    translateAnimation.interpolator = AccelerateDecelerateInterpolator()
+    translateAnimation.duration = TRANSLATE_DURATION
+    return translateAnimation
+  }
+
+  private fun fadeInAnimation(): AlphaAnimation {
+    val alphaAnimation = AlphaAnimation(0.0f, 1.0f)
+    alphaAnimation.interpolator = AccelerateDecelerateInterpolator()
+    alphaAnimation.duration = ALPHA_DURATION
+    return alphaAnimation
   }
 }

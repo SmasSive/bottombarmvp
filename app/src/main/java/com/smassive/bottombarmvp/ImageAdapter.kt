@@ -20,6 +20,7 @@ class ImageAdapter(private val context: Context, private val imageUrls: List<Str
     fun bind(imageUrl: String) {
       Picasso.with(context)
           .load(imageUrl)
+          .noFade()
           .resize(1080, 600)
           .centerCrop()
           .into(itemView.photo)
