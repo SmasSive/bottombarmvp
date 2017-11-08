@@ -3,6 +3,7 @@ package com.smassive.bottombarmvp
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.ActivityOptionsCompat
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AlphaAnimation
@@ -27,6 +28,8 @@ class MainActivity : BottomBarActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
+    bottomBar?.setOnTabReselectListener { tabId -> openHomeAnimation() }
+
     val imageUrls = listOf(
         "https://d.inmofactory.com/1/101830/12283936/133081769.jpg",
         "https://d.inmofactory.com/1/89157/5338093/20129730.jpg",
@@ -42,6 +45,11 @@ class MainActivity : BottomBarActivity() {
     recyclerView.adapter = ImageAdapter(this, imageUrls)
 
     enterAnimation(recyclerView)
+  }
+
+  private fun openHomeAnimation() {
+    val options = ActivityOptionsCompat.makeCustomAnimation(this, R.anim.slide_from_left, R.anim.slide_to_right)
+    startActivity(HomeActivity.getIntent(this), options.toBundle())
   }
 
   private fun enterAnimation(view: View) {

@@ -7,7 +7,7 @@ import com.roughike.bottombar.BottomBar
 abstract class BottomBarActivity : AppCompatActivity() {
 
   private val bottomBarNavigator = BottomBarNavigator()
-  private var bottomBar: BottomBar? = null
+  protected var bottomBar: BottomBar? = null
 
   abstract val layoutId: Int
   abstract val tabId: Int

@@ -6,11 +6,13 @@ import android.content.Intent
 class HomeActivity : BottomBarActivity() {
 
   override val layoutId: Int
-    get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
+    get() = R.layout.activity_home
   override val tabId: Int
     get() = R.id.tab_search
 
   companion object {
-    fun getIntent(context: Context) = Intent(context, HomeActivity::class.java)
+    fun getIntent(context: Context): Intent {
+      return Intent(context, HomeActivity::class.java)
+    }
   }
 }
