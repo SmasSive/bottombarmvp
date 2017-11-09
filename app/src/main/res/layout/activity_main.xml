@@ -22,6 +22,9 @@
 
   <include
       android:id="@+id/bottomBar"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/bottom_bar_height"
+      app:layout_constraintBottom_toBottomOf="parent"
       layout="@layout/view_bottom_bar"
       />
 
