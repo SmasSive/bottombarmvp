@@ -13,9 +13,9 @@ import com.smassive.bottombarmvp.R
 import com.smassive.bottombarmvp.base.BottomBarActivity
 import com.smassive.bottombarmvp.detail.DetailActivity
 import kotlinx.android.synthetic.main.activity_main.recyclerView
-import kotlinx.android.synthetic.main.view_tool_bar_search.toolbarSearchIcon
 import kotlinx.android.synthetic.main.view_tool_bar_search.toolbarSearchSubtitle
 import kotlinx.android.synthetic.main.view_tool_bar_search.toolbarSearchTitle
+import kotlinx.android.synthetic.main.view_tool_bar_search.toolbarTitleLayout
 
 class MainActivity : BottomBarActivity() {
 
@@ -57,7 +57,7 @@ class MainActivity : BottomBarActivity() {
 
   private fun configureToolbar() {
     setTitle()
-    toolbarSearchIcon.setOnClickListener { openHome() }
+    toolbarTitleLayout.setOnClickListener { openHome() }
   }
 
   private fun setTitle() {
