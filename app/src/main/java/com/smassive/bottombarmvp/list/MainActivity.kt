@@ -57,12 +57,8 @@ class MainActivity : BottomBarActivity() {
 
   private fun openHome() {
     startActivity(HomeActivity.getIntent(this))
-    finish()
-  }
-
-  override fun finish() {
-    super.finish()
     overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
+    finish()
   }
 
   private fun enterAnimation(view: View) {
