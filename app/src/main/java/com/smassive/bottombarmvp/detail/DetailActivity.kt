@@ -4,10 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.smassive.bottombarmvp.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.detailPhoto
+import kotlinx.android.synthetic.main.activity_detail.toolbar
 
 class DetailActivity : AppCompatActivity() {
 
@@ -27,8 +29,7 @@ class DetailActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_detail)
 
-    supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    supportActionBar?.setDisplayShowHomeEnabled(true)
+    configureToolbar()
 
     imageUrl = intent.getStringExtra(EXTRA_IMAGE_URL)
 
@@ -38,6 +39,15 @@ class DetailActivity : AppCompatActivity() {
         .resize(1080, 600)
         .centerCrop()
         .into(detailPhoto)
+  }
+
+  private fun configureToolbar() {
+    val toolbar = toolbar as Toolbar
+    toolbar.setNavigationIcon(R.drawable.icon_arrow_left_neg_m)
+    setSupportActionBar(toolbar)
+
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    supportActionBar?.setDisplayShowHomeEnabled(true)
   }
 
   override fun finish() {
