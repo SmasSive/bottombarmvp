@@ -13,17 +13,34 @@
       android:supportsRtl="true"
       android:theme="@style/AppTheme"
       >
-    <activity android:name=".MainActivity">
+    <activity
+        android:name=".list.MainActivity"
+        android:theme="@style/noAnimTheme"
+        >
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-    <activity android:name=".FavoritesActivity"/>
-    <activity android:name=".AlertsActivity"/>
-    <activity android:name=".MessagesActivity"/>
-    <activity android:name=".MoreActivity"/>
+    <activity
+        android:name=".FavoritesActivity"
+        android:theme="@style/noAnimTheme"
+        />
+    <activity
+        android:name=".AlertsActivity"
+        android:theme="@style/noAnimTheme"
+        />
+    <activity
+        android:name=".MessagesActivity"
+        android:theme="@style/noAnimTheme"
+        />
+    <activity
+        android:name=".MoreActivity"
+        android:theme="@style/noAnimTheme"
+        />
+    <activity android:name=".HomeActivity"/>
+    <activity android:name=".detail.DetailActivity"/>
   </application>
 
 </manifest>

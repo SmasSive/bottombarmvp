@@ -1,13 +1,14 @@
-package com.smassive.bottombarmvp
+package com.smassive.bottombarmvp.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.roughike.bottombar.BottomBar
+import com.smassive.bottombarmvp.R
 
 abstract class BottomBarActivity : AppCompatActivity() {
 
   private val bottomBarNavigator = BottomBarNavigator()
-  private var bottomBar: BottomBar? = null
+  protected var bottomBar: BottomBar? = null
 
   abstract val layoutId: Int
   abstract val tabId: Int

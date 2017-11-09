@@ -2,6 +2,7 @@ package com.smassive.bottombarmvp
 
 import android.content.Context
 import android.content.Intent
+import com.smassive.bottombarmvp.base.BottomBarActivity
 
 class AlertsActivity : BottomBarActivity() {
 
