@@ -10,7 +10,7 @@
       android:layout_width="match_parent"
       android:layout_height="@dimen/tool_bar_height"
       app:layout_constraintTop_toTopOf="parent"
-      layout="@layout/view_tool_bar"
+      layout="@layout/view_tool_bar_back"
       />
 
   <ImageView

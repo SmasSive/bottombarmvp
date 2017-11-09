@@ -3,8 +3,6 @@ package com.smassive.bottombarmvp.list
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
-import android.view.MenuItem
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AlphaAnimation
@@ -14,10 +12,10 @@ import com.smassive.bottombarmvp.HomeActivity
 import com.smassive.bottombarmvp.R
 import com.smassive.bottombarmvp.base.BottomBarActivity
 import com.smassive.bottombarmvp.detail.DetailActivity
-import kotlinx.android.synthetic.main.activity_detail.toolbar
 import kotlinx.android.synthetic.main.activity_main.recyclerView
-import kotlinx.android.synthetic.main.view_tool_bar.toolbarSubtitle
-import kotlinx.android.synthetic.main.view_tool_bar.toolbarTitle
+import kotlinx.android.synthetic.main.view_tool_bar_search.toolbarSearchIcon
+import kotlinx.android.synthetic.main.view_tool_bar_search.toolbarSearchSubtitle
+import kotlinx.android.synthetic.main.view_tool_bar_search.toolbarSearchTitle
 
 class MainActivity : BottomBarActivity() {
 
@@ -37,7 +35,6 @@ class MainActivity : BottomBarActivity() {
     super.onCreate(savedInstanceState)
 
     configureToolbar()
-    setTitle()
 
     bottomBar?.setOnTabReselectListener { _ -> openHome() }
 
@@ -59,27 +56,13 @@ class MainActivity : BottomBarActivity() {
   }
 
   private fun configureToolbar() {
-    val toolbar = toolbar as Toolbar
-    toolbar.setNavigationIcon(R.drawable.icon_search_neg_m)
-    setSupportActionBar(toolbar)
-
-    supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    supportActionBar?.setDisplayShowHomeEnabled(true)
+    setTitle()
+    toolbarSearchIcon.setOnClickListener { openHome() }
   }
 
   private fun setTitle() {
-    toolbarTitle.text = "Sant Feliu de Codines"
-    toolbarSubtitle.text = "121.647 inmuebles"
-  }
-
-  override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-    return when(item?.itemId) {
-      android.R.id.home -> {
-        openHome()
-        true
-      }
-      else -> super.onOptionsItemSelected(item)
-    }
+    toolbarSearchTitle.text = "Sant Feliu de Codines"
+    toolbarSearchSubtitle.text = "121.647 inmuebles"
   }
 
   private fun openDetail() = { imageUrl: String ->

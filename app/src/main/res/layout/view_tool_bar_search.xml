@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="@dimen/tool_bar_height"
+                                   android:background="?attr/colorPrimaryDark"
+    >
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center_vertical"
+      android:background="@drawable/toolbar_background"
+      android:paddingLeft="@dimen/margin_normal"
+      android:paddingRight="@dimen/margin_normal"
+      >
+
+    <ImageView
+        android:id="@+id/toolbarSearchIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_search_neg_m"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        />
+
+    <LinearLayout
+        android:layout_width="288dp"
+        android:layout_height="40dp"
+        android:orientation="vertical"
+        >
+
+      <TextView
+          android:id="@+id/toolbarSearchTitle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          tools:text="Sant Feliu de Codines"
+          style="@style/toolbar_title"
+          />
+
+      <TextView
+          android:id="@+id/toolbarSearchSubtitle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          tools:text="121.647 inmuebles"
+          style="@style/toolbar_subtitle"
+          />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</android.support.v7.widget.Toolbar>

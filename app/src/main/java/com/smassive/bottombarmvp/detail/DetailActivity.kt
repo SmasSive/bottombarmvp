@@ -42,12 +42,10 @@ class DetailActivity : AppCompatActivity() {
   }
 
   private fun configureToolbar() {
-    val toolbar = toolbar as Toolbar
-    toolbar.setNavigationIcon(R.drawable.icon_arrow_left_neg_m)
-    setSupportActionBar(toolbar)
-
+    setSupportActionBar(toolbar as Toolbar)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
     supportActionBar?.setDisplayShowHomeEnabled(true)
+    supportActionBar?.setDisplayShowTitleEnabled(false)
   }
 
   override fun finish() {
@@ -56,7 +54,7 @@ class DetailActivity : AppCompatActivity() {
   }
 
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-    return when(item?.itemId) {
+    return when (item?.itemId) {
       android.R.id.home -> {
         finish()
         true

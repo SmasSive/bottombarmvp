@@ -3,18 +3,20 @@
                                    xmlns:tools="http://schemas.android.com/tools"
                                    android:layout_width="match_parent"
                                    android:layout_height="@dimen/tool_bar_height"
-                                   android:background="?attr/colorPrimary"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:background="?attr/colorPrimaryDark"
+                                   app:navigationIcon="@drawable/icon_arrow_left_neg_m"
     >
 
   <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
+      android:layout_width="288dp"
+      android:layout_height="40dp"
       android:orientation="vertical"
-      android:gravity="center_vertical"
+      android:visibility="gone"
       >
 
     <TextView
-        android:id="@+id/toolbarTitle"
+        android:id="@+id/toolbarBackTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Sant Feliu de Codines"
@@ -22,7 +24,7 @@
         />
 
     <TextView
-        android:id="@+id/toolbarSubtitle"
+        android:id="@+id/toolbarBackSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="121.647 inmuebles"
