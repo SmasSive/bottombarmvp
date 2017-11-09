@@ -9,17 +9,22 @@ import com.smassive.bottombarmvp.extensions.inflate
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_list_main.view.photo
 
-class ImageAdapter(private val context: Context, private val imageUrls: List<String>) :
-    RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
+class ImageAdapter(private val context: Context,
+                   private val imageUrls: List<String>,
+                   private val onClickListener: (imageUrl: String) -> Unit = {}) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
-  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ImageViewHolder(context, parent.inflate(R.layout.item_list_main))
+  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+      ImageViewHolder(context, parent.inflate(R.layout.item_list_main), onClickListener)
 
   override fun onBindViewHolder(holder: ImageViewHolder, position: Int) = holder.bind(imageUrls[position])
 
   override fun getItemCount() = imageUrls.size
 
-  class ImageViewHolder(private val context: Context, itemView: View) : RecyclerView.ViewHolder(itemView) {
+  class ImageViewHolder(private val context: Context, itemView: View, private val onClickListener: (imageUrl: String) -> Unit) :
+      RecyclerView.ViewHolder(itemView) {
+
     fun bind(imageUrl: String) {
+      itemView.setOnClickListener { onClickListener.invoke(imageUrl) }
       Picasso.with(context)
           .load(imageUrl)
           .noFade()

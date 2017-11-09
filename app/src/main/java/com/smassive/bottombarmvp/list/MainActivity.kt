@@ -9,9 +9,10 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AlphaAnimation
 import android.view.animation.AnimationSet
 import android.view.animation.TranslateAnimation
-import com.smassive.bottombarmvp.base.BottomBarActivity
 import com.smassive.bottombarmvp.HomeActivity
 import com.smassive.bottombarmvp.R
+import com.smassive.bottombarmvp.base.BottomBarActivity
+import com.smassive.bottombarmvp.detail.DetailActivity
 import kotlinx.android.synthetic.main.activity_main.recyclerView
 
 class MainActivity : BottomBarActivity() {
@@ -31,7 +32,7 @@ class MainActivity : BottomBarActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
-    bottomBar?.setOnTabReselectListener { tabId -> openHomeAnimation() }
+    bottomBar?.setOnTabReselectListener { _ -> openHome() }
 
     val imageUrls = listOf(
         "https://d.inmofactory.com/1/101830/12283936/133081769.jpg",
@@ -45,14 +46,24 @@ class MainActivity : BottomBarActivity() {
         "https://d.inmofactory.com/1/108152/12316907/149574341.jpg",
         "https://d.inmofactory.com/1/90885/13061649/148182864.jpg"
     )
-    recyclerView.adapter = ImageAdapter(this, imageUrls)
+    recyclerView.adapter = ImageAdapter(this, imageUrls, openDetail())
 
     enterAnimation(recyclerView)
   }
 
-  private fun openHomeAnimation() {
-    val options = ActivityOptionsCompat.makeCustomAnimation(this, R.anim.slide_from_left, R.anim.slide_to_right)
-    startActivity(HomeActivity.getIntent(this), options.toBundle())
+  private fun openDetail() = { imageUrl: String ->
+    startActivity(DetailActivity.getIntent(this, imageUrl))
+    overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+  }
+
+  private fun openHome() {
+    startActivity(HomeActivity.getIntent(this))
+    finish()
+  }
+
+  override fun finish() {
+    super.finish()
+    overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
   }
 
   private fun enterAnimation(view: View) {
