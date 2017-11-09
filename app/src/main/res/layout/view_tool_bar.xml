@@ -18,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Sant Feliu de Codines"
+        style="@style/toolbar_title"
         />
 
     <TextView
@@ -25,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="121.647 inmuebles"
+        style="@style/toolbar_subtitle"
         />
 
   </LinearLayout>
